@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, StatusBar, Image } from 'react-native';
+import { Home } from './src/screens/Home';
+import { styles } from './src/screens/Home/styles';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+     <StatusBar 
+      barStyle={'light-content'}
+      backgroundColor="transparent"
+      translucent
+     />
+     <View style={{ backgroundColor: '#000000', flex: 1, paddingTop: 24 }}>
+      <View style={styles.containerImage}>
+       <Image source={require('../imhereprova/src/assets/Logo.png')} width={110} height={32} resizeMode='contain' />
+      </View>
+     </View> 
+     <Home />
+    </>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
